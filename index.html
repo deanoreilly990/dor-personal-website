@@ -11,6 +11,7 @@
       gtag('config', 'UA-135524003-1');
     </script>
 
+
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Profile &mdash; Dean O'Reilly Web Resume </title>
@@ -563,6 +564,10 @@
                           data:myString,
                          success:function(data, textStatus, jqXHR) {
                                 swal("Mesaaged Recieved", "Thank you, I will be in contact soon.", "success")
+                                gtag('event', 'Sent',{
+                                    'event_category':'Emails',
+                                    'event_label':'Emails_Sent'
+                                });
                                 console.log(data);
                          },
                          error: function(jqXHR, textStatus, errorThrown) {swal("Issue", "Oh no, looks like an issue. Please send me an email at: dean@deanoreilly.com.", "error");}
